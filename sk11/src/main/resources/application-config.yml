@@ -1,0 +1,94 @@
+eureka:
+  client:
+    enabled: true
+    healthcheck:
+      enabled: true
+    fetch-registry: true
+    register-with-eureka: true
+    instance-info-replication-interval-seconds: 10
+    registry-fetch-interval-seconds: 10
+  instance:
+    appname: smkt-service
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+spring:
+  servlet:
+    multipart:
+      max-file-size: 250MB
+      max-request-size: 250MB
+  ldap:
+    context-source:
+      urls:
+      base:
+      user-dn:
+      password:
+      pooled: true
+app:
+  jdbc:
+    batch-size: 1000
+  jwt:
+    secret:
+    access_token_expired_seconds: 180
+    refresh_token_expired_seconds: 31536000
+  ldap:
+    enabled: true
+    group-search-base:
+    group-search-filter:
+    user-search-filter:
+    user-dn-patterns:
+    adminSmktGroupCn:
+    adminTmGroupCn:
+    itDutyGroupCn:
+    userGroupCn:
+  security:
+    max_logged_devices_num: 5
+  sk11:
+    user: kkc_dev
+    password: fzm0MS0pGm
+    base-path: https://ia-oc-w-aiptst.cdu.so/api/public/core/v2.0
+    model-version: actual
+    api-version: 2.0
+    measurement-values-bulk-size: 100
+    cert: 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
+    long-cache:
+      scheduling: true
+      pre-cached-levels: 5
+      job-cron: "0 */10 * ? * *"
+      expires-after-days: 60
+      invalidates-before-hours: 24
+      update-timeout-seconds: 3600
+      random-factor-minutes: 240
+    cache:
+      models:
+        expiry-after-minutes: 1440
+      children:
+        expiry-after-minutes: 60
+        maximum-size: 100000
+      addresses:
+        expiry-after-minutes: 1440
+      categories:
+        expiry-after-minutes: 1440
+        maximum-size: 100000
+    web-client:
+      connect-timeout: 250000 #за меньшее время не успеет собраться фоновый кеш
+      read-timeout: 250000 #за меньшее время не успеет собраться фоновый кеш
+      max-in-memory-kbytes: 150000
+    measurement-type:
+      interface-state: 1000000D-0000-0000-C000-0000006D746C # Состояние интерфейса
+      not-updated: 10000010-0000-0000-C000-0000006D746C # Необновление
+      not-topical: 1000000F-0000-0000-C000-0000006D746C # Непоступление
+      pnu: 10000012-0000-0000-C000-0000006D746C # Состояние интерфейса
+  async-task:
+    timeout-minutes: 10
+  ws:
+    web-client:
+      connect-timeout: 10000
+      read-timeout: 100000
+      memory-size: 150000
+  telemetry:
+    web-client:
+      connect-timeout: 10000
+      read-timeout: 100000
+      memory-size: 150000
+  clean-db:
+    job-cron: "0 0 1 * * *"

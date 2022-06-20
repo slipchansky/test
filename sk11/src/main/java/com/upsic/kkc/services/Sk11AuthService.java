@@ -38,9 +38,10 @@ public class Sk11AuthService {
      */
     @Cacheable(ADDRESSES_CACHE)
     public Sk11AddressesDto getAddresses() {
+        String uri = String.join("/", sk11Configuration.getBasePath(), ADDRESSES_PATH);
         return webClient
                 .get()
-                .uri(String.join("/", sk11Configuration.getBasePath(), ADDRESSES_PATH))
+                .uri(uri)
                 .retrieve()
                 .bodyToMono(Sk11AddressesDto.class)
                 .doOnError(this::errorHandler)

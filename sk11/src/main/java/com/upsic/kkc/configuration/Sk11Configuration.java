@@ -10,64 +10,64 @@ import java.util.UUID;
  * Параметры для интеграции с СК-11
  */
 @Configuration
-@Getter
+
 public class Sk11Configuration {
 
     @Value("${app.sk11.web-client.connect-timeout}")
-    public Integer connectTimeout;
+    @Getter public Integer connectTimeout;
 
     @Value("${app.sk11.web-client.read-timeout}")
-    public Long readTimeout;
+    @Getter public Long readTimeout;
 
     @Value("${app.sk11.api-version}")
-    private String apiVersion;
+    @Getter private String apiVersion;
 
     @Value("${app.sk11.model-version}")
-    private String modelVersion;
+    @Getter private String modelVersion;
 
     @Value("${app.sk11.user}")
-    private String user;
+    @Getter private String user;
 
     @Value("${app.sk11.password}")
-    private String password;
+    @Getter private String password;
 
     @Value("${app.sk11.base-path}")
-    private String basePath;
+    @Getter private String basePath;
 
     @Value("${app.sk11.web-client.max-in-memory-kbytes}")
-    private Integer maxInMemoryKBytes;
+    @Getter private Integer maxInMemoryKBytes;
 
     @Value("${app.sk11.long-cache.pre-cached-levels}")
-    private Integer preCachedLevels;
+    @Getter private Integer preCachedLevels;
 
     @Value("${app.sk11.measurement-values-bulk-size}")
-    public Integer measurementValuesBulkSize;
+    @Getter public Integer measurementValuesBulkSize;
 
     @Value("${app.sk11.long-cache.expires-after-days}")
-    private Integer expiresAfterDays;
+    @Getter private Integer expiresAfterDays;
 
     @Value("${app.sk11.long-cache.invalidates-before-hours}")
-    private Integer invalidatesBeforeHours;
+    @Getter private Integer invalidatesBeforeHours;
 
     @Value("${app.sk11.long-cache.update-timeout-seconds}")
-    private Integer longCacheUpdateTimeoutSeconds;
+    @Getter private Integer longCacheUpdateTimeoutSeconds;
 
     @Value("${app.sk11.long-cache.random-factor-minutes}")
-    private Integer randomFactorMinutes;
+    @Getter private Integer randomFactorMinutes;
 
     @Value("${app.sk11.cert}")
-    private String cert;
+    @Getter private String cert;
 
     @Value("${app.sk11.measurement-type.interface-state}")
-    private UUID interfaceStateTypeUid;
+    @Getter private UUID interfaceStateTypeUid;
 
     @Value("${app.sk11.measurement-type.not-updated}")
-    private UUID notUpdatedTypeUid;
+    @Getter private UUID notUpdatedTypeUid;
 
     @Value("${app.sk11.measurement-type.not-topical}")
-    private UUID notTopicalTypeUid;
+    @Getter private UUID notTopicalTypeUid;
 
     @Value("${app.sk11.measurement-type.pnu}")
-    private UUID pnuTypeUid;
+    @Getter private UUID pnuTypeUid;
 
 }
