@@ -1,0 +1,7 @@
+#settings for mvn liquibase:generateChangeLog
+url: jdbc:postgresql://localhost:5432/postgres
+username: user
+password: password
+outputChangeLogFile: 000000000000_init.xml
+dataDir: db/changelog/v0001/000000000000_init_data
+

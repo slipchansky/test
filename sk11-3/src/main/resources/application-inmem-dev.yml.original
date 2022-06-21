@@ -1,0 +1,41 @@
+logging:
+  level:
+    root: INFO
+    spring: INFO
+    service: TRACE
+  file:
+    dir: ""
+server:
+  port: 30002
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smkt_backend
+    username: smkt_bu
+    password: !!replaceme!!
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+app:
+  jwt:
+    secret: !!replaceme!!
+    access_token_expired_seconds: 180000000
+  ldap:
+    enabled: false
+    in-memory-password: !!replaceme!!
+  sk11:
+    user: ntc-smkt-dev
+    password: !!replaceme!!
+    base-path: https://ia-oc-w-aiptst.cdu.so/api/public/core/v2.0
+    long-cache:
+      scheduling: false
+management:
+  health:
+    ldap:
+      enabled: false
+eureka:
+  client:
+    enabled: false

@@ -5,7 +5,7 @@
     <artifactId>sk11</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>sk11</name>
+    <name>sk11-1</name>
     <description>Frequency Quality Assurance Service</description>
     <parent>
         <groupId>org.springframework.boot</groupId>

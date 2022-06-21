@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: smkt-service
+  cloud:
+    config:
+      fail-fast: false # if not in "prod" profile, do not force to use Spring Cloud Config
+      uri: http://${CONFIG_SERVICE_HOST}:${CONFIG_SERVICE_PORT}/resolved/
+      #discovery.enabled=true невозможно из-за /resolved/
+      name: smkt-service
