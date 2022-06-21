@@ -1,6 +1,7 @@
 package com.upsic.kkc.sk11.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Setter
 @Getter
 @NoArgsConstructor
+@Builder
 public class Sk11ModelDto {
 
     private UUID modelUid;

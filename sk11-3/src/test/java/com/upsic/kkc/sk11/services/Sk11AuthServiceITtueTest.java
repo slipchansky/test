@@ -16,7 +16,7 @@ import com.upsic.kkc.sk11.services.annotations.Sk11Itest;
  *
  */
 @Sk11Itest
-//@Disabled // закомментируй это чтобы выполнить.
+@Disabled // закомментируй это чтобы выполнить.
 class Sk11AuthServiceITtueTest {
 
     @Autowired
