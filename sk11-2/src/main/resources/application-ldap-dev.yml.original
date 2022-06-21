@@ -1,0 +1,47 @@
+logging:
+  level:
+    root: INFO
+    spring: INFO
+    service: DEBUG
+  file:
+    dir: ""
+server:
+  port: 30002
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smkt_backend
+    username: smkt_bu
+    password: !!replaceme!!
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  ldap:
+    context-source:
+      urls: ldap://127.0.0.1:9389
+      base: DC=cdu,DC=so
+      user-dn: ntc-smkt-dev
+      password: !!replaceme!!
+app:
+  jwt:
+    secret: !!replaceme!!
+    access_token_expired_seconds: 180000000
+  ldap:
+    group-search-base: OU=Группы,OU=Служебные
+    group-search-filter: member={0}
+    user-search-filter: (&(sAMAccountName={0})(|(memberOf=CN=ntc-smkt-admins-sk11,OU=Группы,OU=Служебные,DC=cdu,DC=so)(memberOf=CN=ntc-smkt-admins-tm,OU=Группы,OU=Служебные,DC=cdu,DC=so)(memberOf=CN=ntc-smkt-operators,OU=Группы,OU=Служебные,DC=cdu,DC=so)(memberOf=CN=ntc-smkt-users,OU=Группы,OU=Служебные,DC=cdu,DC=so)))
+    adminSmktGroupCn: ntc-smkt-admins-sk11
+    adminTmGroupCn: ntc-smkt-admins-tm
+    itDutyGroupCn: ntc-smkt-operators
+    userGroupCn: ntc-smkt-users
+    user-dn-patterns: sAMAccountName={0}
+  sk11:
+    user: ntc-smkt-dev
+    password: !!replaceme!!
+    base-path: https://ia-oc-w-aiptst.cdu.so/api/public/core/v2.0
+eureka:
+  client:
+    enabled: false

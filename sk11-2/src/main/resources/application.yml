@@ -1,0 +1,44 @@
+logging:
+  level:
+    root: INFO
+    spring: INFO
+    service: DEBUG
+  config:
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%5p) %X{user} %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+    file: "%d %-5level %X{user} [%thread] %logger{0}: %msg%n"
+  file:
+    dir: "var/log/SMKT/"
+spring:
+  config:
+    import:
+      - application-config.yml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+  application:
+    name: smkt-service
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+server:
+  forward-headers-strategy: framework # для работы swagger через reverse-proxy
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+info:
+  app:
+    name: smkt-service
+    description: Backend smkt service
+    version: 1.0.0
