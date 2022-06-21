@@ -13,7 +13,7 @@ import com.upsic.kkc.sk11.dto.Sk11NodeDto;
 import com.upsic.kkc.sk11.services.annotations.Sk11Itest;
 
 @Sk11Itest
-//@Disabled // закомментируй это чтобы выполнить.
+@Disabled // закомментируй это чтобы выполнить.
 class Sk11ApiServiceITrueTest {
 
     private static final String LUA_CATEGORIES = 
