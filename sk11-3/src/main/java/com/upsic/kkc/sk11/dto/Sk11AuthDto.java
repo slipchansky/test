@@ -2,13 +2,13 @@ package com.upsic.kkc.sk11.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
 public class Sk11AuthDto {
 

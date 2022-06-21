@@ -21,7 +21,7 @@ import static com.upsic.kkc.sk11.utils.Sk11Constants.Cache.*;
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class CacheConfiguration {
     @Bean
-    public CaffeineCache childrenCache() {
+    public CaffeineCache sk11AdressesCache() {
         return new CaffeineCache(SK11_ADDRESS_ENTITIES_CACHE, Caffeine.newBuilder()
                 .build());
     }

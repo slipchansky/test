@@ -77,9 +77,10 @@ public class Sk11AuthService {
     }
 
     private Sk11AddressesDto getAddresses(String path) {
+        String uri = String.join("/", path, sk11Configuration.getApiPath(), ADDRESSES_PATH);
         return webClient
                 .get()
-                .uri(String.join("/", path, sk11Configuration.getApiPath(), ADDRESSES_PATH))
+                .uri(uri)
                 .retrieve()
                 .bodyToMono(Sk11AddressesDto.class)
                 .doOnError(this::errorHandler)
@@ -96,7 +97,7 @@ public class Sk11AuthService {
             log.debug("get addresses from SK-11");
             addressesThreadLocal.set(getAddresses(getBasePath()));
         }
-            return addressesThreadLocal.get();
+        return addressesThreadLocal.get();
     }
 
     /**

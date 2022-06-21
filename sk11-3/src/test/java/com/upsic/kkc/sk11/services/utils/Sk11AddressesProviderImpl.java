@@ -12,7 +12,7 @@ import com.upsic.kkc.sk11.dto.Sk11AddressDto;
 @Service
 public class Sk11AddressesProviderImpl implements Sk11AddressesProvider {
     
-    @Value("${sk11.base-path}")
+    @Value("${app.sk11.base-path}")
     private String address; 
     
     public List<Sk11AddressDto> getSk11AddressList() {

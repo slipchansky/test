@@ -15,6 +15,7 @@ import com.upsic.kkc.sk11.dto.AnswerDto;
 import com.upsic.kkc.sk11.dto.LuaScriptAnswerDto;
 import com.upsic.kkc.sk11.dto.LuaScriptDto;
 import com.upsic.kkc.sk11.dto.MeasurementValuesDto;
+import com.upsic.kkc.sk11.dto.Sk11ModelDto;
 import com.upsic.kkc.sk11.dto.TelemetryDeleteDto;
 import com.upsic.kkc.sk11.dto.TelemetryValueDto;
 import com.upsic.kkc.sk11.dto.TelemetryValueIntervalDto;
@@ -290,6 +291,21 @@ public class Sk11ApiServiceImpl implements Sk11ApiService {
             throw new Sk11IntegrationRuntimeException(SK11_CONNECTION_ERROR, cause);
         }
         throw new Sk11IntegrationRuntimeException(SK11_OTHER_ERROR, cause); // неопознанная ошибка
+    }
+
+    /**
+     * Получение доступных моделей api СК-11
+     *
+     * @return список моделей
+     */
+    @Override
+    public List<Sk11ModelDto> getModels() {
+        LuaScriptAnswerDto<Sk11ModelDto> result = sk11AuthorizedWebClient
+                    .get().uri(getObjectModelsPath())
+                    .retrieve()
+                    .bodyToMono(new ParameterizedTypeReference<LuaScriptAnswerDto<Sk11ModelDto>>() {})
+                    .block();
+        return result != null ? result.getValue() : Collections.emptyList();
     }
 
 }

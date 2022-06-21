@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import com.upsic.kkc.sk11.dto.AnswerDto;
 import com.upsic.kkc.sk11.dto.LuaScriptDto;
+import com.upsic.kkc.sk11.dto.Sk11ModelDto;
 import com.upsic.kkc.sk11.dto.TelemetryDeleteDto;
 import com.upsic.kkc.sk11.dto.TelemetryValueDto;
 import com.upsic.kkc.sk11.dto.TelemetryValueIntervalDto;
@@ -53,6 +54,8 @@ public interface Sk11ApiService {
      * @return - список объектов указанного типа
      */
     <T> List<T> executeLuaScript(LuaScriptDto luaScriptDto, Class<T> clazz);
+
+    List<Sk11ModelDto> getModels();
 
 
 }
